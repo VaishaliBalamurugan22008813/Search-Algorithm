@@ -19,20 +19,81 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
+Developed by: VAISHALI BALAMURUGAN
+RegisterNumber: 22008813
+def linearSearch(array,n,k):
+  for i in range(0,n):
+    if(array[i]==k):
+      return i
+  return -1
 
+array=eval(input())
+k=eval(input())
+n=len(array)
+array.sort()
+result=linearSearch(array,n,k)
+if(result==-1):
+  print(array)
+  print("Element not found")
+else:
+  print(array)
+  print("Element found at index:",result)
 
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
+Developed by: VAISHALI BALAMURUGAN
+RegisterNumber: 22008813
+def binarySearchIter(array,k,low,high):
+  while low <= high:
+    mid = low+(high-low)//2
+    if array[mid]==k:
+      return mid
+    elif array[mid] < k:
+      low = mid +1
+    else:
+      high = mid -1
+  return -1
+array=eval(input())
+array.sort()
+k =  eval(input())
+result = binarySearchIter(array,k,0,len(array)-1)
+if(result == -1):
+  print(array)
+  print("Element not found")
+else:
+  print(array)
+  print("Element found at index:",result) 
 
 
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
+Developed by: VAISHALI BALAMURUGAN
+RegisterNumber: 22008813
+def BinarySearch(arr,k,low,high):
+  if high >=low:
+    mid = low + (high - low)//2
+    if arr[mid] == k:
+      return mid
+    elif arr[mid] > k:
+      return BinarySearch(arr,k,low,mid-1)
+    else:
+      return BinarySearch(arr,k,mid+1,high)
+  else:
+    return -1
+  arr = eval(input())
+  arr.sort()
+  k = eval(input())
+  result=BinarySearch(arr,k,0,len(arr)-1)
+  if(result == -1):
+    print(arr)
+    print("Element not found")
+  else:
+    print(arr)
+    print("Element found at index:", result)
 
 
 
@@ -41,8 +102,25 @@ iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
 ## Sample Input and Output
 
+INPUT FOR SELECTION SORT:
 
 
+![I1](https://user-images.githubusercontent.com/119390134/213957855-42585be0-3e17-4209-b4cf-356b11753bb6.png)
+
+INPUT FOR INSERTION SORT :
+
+
+![I2](https://user-images.githubusercontent.com/119390134/213957967-ae116511-722b-4fd7-a801-cb087db9200d.png)
+
+OUTPUT FOR SELECTION SORT :
+
+
+![O1](https://user-images.githubusercontent.com/119390134/213958171-99ab9182-672b-42ce-b6e4-63f6f00f0cd8.png)
+
+OUTPUT FOR INSERTION SORT :
+
+
+![O2](https://user-images.githubusercontent.com/119390134/213959356-32c9c0e9-d6c5-4c48-b622-c549bd1af4ad.png)
 
 
 
